@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 8/3 Mẹ Yêu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 6s infinite alternate;
+            color: #d63384;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            padding: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 40px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: bounceText 2s infinite alternate;
+        }
+        @keyframes bounceText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        .heart {
+            font-size: 60px;
+            animation: heartbeat 1s infinite alternate, glow 1.5s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.3); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px pink; }
+            to { text-shadow: 0 0 20px red; }
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s;
+        }
+        .animated-message {
+            font-size: 20px;
+            color: #fff;
+            margin-top: 20px;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: slideIn 6s infinite;
+        }
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-20px) translateX(-50%); }
+            50% { opacity: 1; transform: translateY(0) translateX(-50%); }
+            100% { opacity: 0; transform: translateY(20px) translateX(-50%); }
+        }
+        .mom-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s, bounceImage 4s infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceImage {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        .flower {
+            width: 80px;
+            position: absolute;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc Mừng Ngày 8/3</h1>
+        <span class="heart">❤</span>
+        <p class="message">Mẹ ơi! Chúc mẹ luôn khỏe mạnh, hạnh phúc và luôn cười tươi như những đóa hoa!</p>
+        <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/473408176_1326443095030568_7952605166951202219_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=v-L63GivNXUQ7kNvgGOpe-z&_nc_oc=AdjjeSAX-gUxd--twUpYNnjnvB07GJb-9QCwV7_46KY1dNJlfzqvEMfbcPR9tn1iOYU&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=Am4EueYKTDjm20HZrlh_0QM&oh=00_AYB9RmFcQ8bbUwRTo9jYAuq5psZTk5-8F_QkQBlS4L9w1w&oe=67BB6B0F" alt="Mẹ yêu" class="mom-image">
+        <p class="animated-message">Chúc mẹ tất cả trừ vất vả 💖</p>
+    </div>
+    <script>
+        function createFlower() {
+            const flower = document.createElement("img");
+            flower.src = "https://cdn.pixabay.com/photo/2014/04/02/10/21/heart-303568_1280.png";
+            flower.className = "flower";
+            flower.style.left = Math.random() * window.innerWidth + "px";
+            flower.style.animationDuration = (Math.random() * 2 + 3) + "s";
+            document.body.appendChild(flower);
+            setTimeout(() => { flower.remove(); }, 5000);
+        }
+        setInterval(createFlower, 400);
+    </script>
+</body>
+</html>
